@@ -39,17 +39,21 @@
 						$("#out").animate({width: '100'});
 					}
 				});
+				$("#click3").click(function () {
+					document.getElementById('sound').play();
+				});
 			});
 		</script>
 	</head>
 	<body>
 		<p>Testing!!!!</p>
 		<div>
-			<a href="#test">Click 1</a> <button id="click2" type="button">Click 2</button>
+			<a href="#test">Click 1</a> <button id="click2" type="button">Click 2</button> <button id="click3" type="button">Click 3</button>
 			<div id="test"></div>
 			<div id="out"></div>
 		</div>
-		<audio controls autoplay>
+		<audio id="sound" controls="controls" autoplay="autoplay">
+			<source src="horse.ogg" type="audio/ogg">
 			<source src="testtone.wav" type="audio/wav">
 			<source src="testtone.mp3" type="audio/mpeg">
 			Your browser does not support the audio tag.
