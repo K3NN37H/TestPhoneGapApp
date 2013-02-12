@@ -40,8 +40,16 @@
 					}
 				});
 				$("#click3").click(function () {
-					var med = new Media("testtone.mp3");
+					var med = new Media("testtone.mp3", function () {
+							alert("worked");
+						},
+						function () {
+							alert("broke");
+						});
 					med.play();
+					var timer = setInterval(function () {
+						med.getCurrentPosition(function () {});
+					},1000);
 					//document.getElementById('sound').play();
 				});
 			});
