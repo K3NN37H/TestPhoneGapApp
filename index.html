@@ -43,9 +43,8 @@
 					var med = new Media("/android_asset/www/testtone.mp3", function () {
 							alert("worked");
 						},
-						function () {
-							alert('code: '    + error.code    + '\n' + 
-                  'message: ' + error.message + '\n');
+						function (error) {
+							alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
 						});
 					med.play();
 					var timer = setInterval(function () {
