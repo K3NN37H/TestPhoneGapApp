@@ -40,11 +40,12 @@
 					}
 				});
 				$("#click3").click(function () {
-					var med = new Media("sound/testtone.mp3", function () {
+					var med = new Media("/android_asset/www/testtone.mp3", function () {
 							alert("worked");
 						},
 						function () {
-							alert("broke");
+							alert('code: '    + error.code    + '\n' + 
+                  'message: ' + error.message + '\n');
 						});
 					med.play();
 					var timer = setInterval(function () {
@@ -63,7 +64,8 @@
 			<div id="out"></div>
 		</div>
 		<audio id="sound" controls="controls">
-			<source src="sound/horse.ogg" type="audio/ogg">
+			<source src="/android_asset/www/sound/horse.ogg" type="audio/ogg">
+			<source src="/android_asset/www/horse.ogg" type="audio/ogg">
 			<source src="sound/testtone.wav" type="audio/wav">
 			<source src="sound/testtone.mp3" type="audio/mpeg">
 			Your browser does not support the audio tag.
