@@ -11,9 +11,9 @@
 			}
 			#out {
 				background-color:red;
-				width:800px;
+				width:400px;
 				height:100px;
-				position:relative;
+				position:absolute;
 				transition:width 1s;
 			}
 			#page2 {
@@ -38,6 +38,15 @@
 		<script src="jquery-1.9.1.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function () {
+				$(document).bind("touchstart touchmove", function(e) {
+					//Disable scrolling by preventing default touch behaviour
+				  e.preventDefault();
+				  var orig = e.originalEvent;
+				  var x = orig.changedTouches[0].pageX;
+				  var y = orig.changedTouches[0].pageY;
+				  // Move a div with id "rect"
+				  $("#out").css({top: y, left: x});
+				});
 				$("#nextb").click(function () {
 					$("#page1").hide();
 					$("#page2").show();
