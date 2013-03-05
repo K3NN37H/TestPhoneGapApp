@@ -54,8 +54,8 @@
 					//var y = e.pageY - this.offsetTop;
 					//console.log(x);
 					//console.log(y);
-					var x = orig.changedTouches[0].pageX;
-					var y = orig.changedTouches[0].pageY;
+					var x = orig.changedTouches[0].pageX - $(this).offset().left;
+					var y = orig.changedTouches[0].pageY - $(this).offset().top;
 					var blah = document.getElementById("can");
 					bcan = blah.getContext("2d");
 					bcan.clearRect(0,0,500,500);
