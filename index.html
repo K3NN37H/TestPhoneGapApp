@@ -50,14 +50,14 @@
 					//Disable scrolling by preventing default touch behaviour
 					e.preventDefault();
 					var orig = e.originalEvent;
-					var x = e.pageX - this.offsetLeft;
-					var y = e.pageY - this.offsetTop;
-					console.log(x);
-					console.log(y);
-					//var x = orig.changedTouches[0].pageX;
-					//var y = orig.changedTouches[0].pageY;
+					//var x = e.pageX - this.offsetLeft;
+					//var y = e.pageY - this.offsetTop;
+					//console.log(x);
+					//console.log(y);
+					var x = orig.changedTouches[0].pageX;
+					var y = orig.changedTouches[0].pageY;
 					var blah = document.getElementById("can");
-					bcan =  blah.getContext("2d");
+					bcan = blah.getContext("2d");
 					bcan.clearRect(0,0,500,500);
 					bcan.fillRect(10,10,5,5);
 					bcan.fillRect(10,40,5,5);
@@ -121,7 +121,7 @@
 				Your browser does not support the audio tag.
 			</audio>
 			<div style="clear:both"></div>
-			<canvas id="can">
+			<canvas width="300px" height="200px" id="can">
 			</canvas>
 		</div>
 		<div id="page2">
