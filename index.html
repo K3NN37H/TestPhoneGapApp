@@ -46,7 +46,7 @@
 		<script src="jquery-1.9.1.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function () {
-				$("#can").bind("touchstart touchmove", function(e) {
+				$("#can").on("touchstart touchmove", function(e) {
 					//Disable scrolling by preventing default touch behaviour
 					e.preventDefault();
 					var orig = e.originalEvent;
@@ -59,12 +59,16 @@
 					var blah = document.getElementById("can");
 					bcan = blah.getContext("2d");
 					bcan.clearRect(0,0,500,500);
-					bcan.fillRect(10,10,5,5);
-					bcan.fillRect(10,40,5,5);
-					bcan.fillRect(10,100,5,5);
-					bcan.fillRect(10,140,5,5);
-					bcan.fillStyle = "rgb(200,0,0)";
-					bcan.fillRect(x,y,100,100);
+					bcan.moveTo(0,0);
+					bcan.lineTo(x,y);
+					bcan.lineTo(300,0);
+					bcan.stroke();
+					//bcan.fillRect(10,10,5,5);
+					//bcan.fillRect(10,40,5,5);
+					//bcan.fillRect(10,100,5,5);
+					//bcan.fillRect(10,140,5,5);
+					//bcan.fillStyle = "rgb(200,0,0)";
+					//bcan.fillRect(x,y,100,100);
 					// Move a div with id "rect"
 					//$("#out").css({top: y, left: x});
 				});
@@ -98,7 +102,7 @@
 					//document.getElementById('sound').play();
 				});
 				$("p").text("YOO JQUERY FOR THE WIN!");
-				////////////document.getElementById("purplemangoattacksapple").innerHTML = "YOOOOOOO!";
+				//document.getElementById("purplemangoattacksapple").innerHTML = "YOOOOOOO!";
 			});
 			
 			
