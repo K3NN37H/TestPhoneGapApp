@@ -73,8 +73,8 @@
 					// Move a div with id "rect"
 					//$("#out").css({top: y, left: x});
 				});
-				$("#can").on("touchend", function() {
-					//e.preventDefault();
+				$("#can").on("touchend", function(e) {
+					e.preventDefault();
 					var blah = document.getElementById("can");
 					var bcan = blah.getContext("2d");
 					bcan.clearRect(0,0,500,500);
