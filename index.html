@@ -57,12 +57,12 @@
 					var x = orig.changedTouches[0].pageX - $(this).offset().left;
 					var y = orig.changedTouches[0].pageY - $(this).offset().top;
 					var blah = document.getElementById("can");
-					bcan = blah.getContext("2d");
+					var bcan = blah.getContext("2d");
 					bcan.clearRect(0,0,500,500);
 					bcan.beginPath();
-					bcan.moveTo(0,0);
+					bcan.moveTo(0,10);
 					bcan.lineTo(x,y);
-					bcan.lineTo(300,0);
+					bcan.lineTo(300,10);
 					bcan.stroke();
 					//bcan.fillRect(10,10,5,5);
 					//bcan.fillRect(10,40,5,5);
@@ -72,6 +72,16 @@
 					//bcan.fillRect(x,y,100,100);
 					// Move a div with id "rect"
 					//$("#out").css({top: y, left: x});
+				});
+				$("#can").on("touchend", function() {
+					//e.preventDefault();
+					var blah = document.getElementById("can");
+					var bcan = blah.getContext("2d");
+					bcan.clearRect(0,0,500,500);
+					bcan.beginPath();
+					bcan.moveTo(0,10);
+					bcan.lineTo(300,10);
+					bcan.stroke();
 				});
 				$("#nextb").click(function () {
 					$("#page1").hide();
